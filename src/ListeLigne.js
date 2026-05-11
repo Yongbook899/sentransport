@@ -1,4 +1,4 @@
-import LigneBus from './LigneBus.js';
+import LigneBus from './LigneBus';
 import './ListeLignes.css';
 
 function ListeLignes({ lignes }) {
@@ -6,16 +6,16 @@ function ListeLignes({ lignes }) {
     <div className="liste-lignes">
       <div className="liste-header">
         <h2>Lignes Dakar Dem Dikk</h2>
-        <span>{lignes.length} lignes disponibles</span>
+        <span className="badge">
+          {lignes.length} lignes disponibles
+        </span>
       </div>
+
       <div className="liste-contenu">
         {lignes.map(ligne => (
           <LigneBus
             key={ligne.id}
-            numero={ligne.numero}
-            depart={ligne.depart}
-            arrivee={ligne.arrivee}
-            arrets={ligne.arrets}
+            ligne={ligne}
           />
         ))}
       </div>
