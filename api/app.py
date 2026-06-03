@@ -8,7 +8,13 @@ CORS(app)
 # Charger les donnees depuis le fichier JSON
 with open("lignes_ddd.json", "r") as f:
     lignes = json.load(f)
-
+    
+with open("arrets.json", "r") as f:
+    arrets = json.load(f)
+    
+@app.route("/arrets")
+def get_arrets():
+    return jsonify(arrets)
 @app.route("/")
 def accueil():
     return jsonify({

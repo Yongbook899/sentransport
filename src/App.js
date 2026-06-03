@@ -5,6 +5,7 @@ import Recherche from './Recherche';
 import LigneBus from './LigneBus';
 import DetailLigne from './DetailLigne';
 import Footer from './footer';
+import Carte from './Carte';
 function App() {
   // 1. Les états
   const [lignes, setLignes] = useState([]);
@@ -102,6 +103,9 @@ onClick={() => handleClickLigne(ligne)}
 ))}
 {ligneSelectionnee
 && <DetailLigne ligne={ligneSelectionnee} />}
+
+{ligneSelectionnee && <DetailLigne ligne={ligneSelectionnee} />}
+      <Carte />   {/* NOUVEAU */}
 </main>
 <Footer />
 </div>
